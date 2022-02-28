@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week5-2 ditn12</title>
+
+<style type="text/css">
+/*.red{color: red} *//*if dua p dlm div*/
+		/*p{color: red}*/ /*if semua p*/
+
+	/*	div p {color: red;}*/ /*decendent selector. using space**/
+	/*	div>p {color: red;}*/ /*child selector.using>**/ /*using , is multiplixer
+*/
+
+		/*div>h2{color: red;}
+		span>p{color: red;}*/
+
+		/*div>h2, span>p  {color: red;}*/ /*can use class*/
+		/*.red{color: red;}*/
+		/*div+p {color: red;}*/ /*adjacent sibiling using*+*/
+	/*	div~p{color: red;}*/ /*general sibling using*~*/
+		/*#fd>p{color: red;}*/
+
+
+	/*/*Cascading*/
+/*body{font-family: comic sans ms;}
+/*Need to change from Arial to comic sans ms*/
+/*p{color: skyblue; font-size: 2em;}*/ /*skyblue, 2em*/
+/*u{background-color: darkmagenta;font-family: cambria;}*/
+/*p{font-style: italic;}/*skyblue, 2em, italic*/
+/*p{line-height: 2em; color: red;}*/ /*red, 2em, italic, 2em*/
+div>div>p{color: red;} /*untuk cari div and anaknya div and paragraph*/
+
+
+
+</style>
+</head>
+
+<body> 
+<div>
+	<!-- <h1>This is H1</h1>
+	<p>i am paragraph</p>
+	<p>another paragraph</p>
+	<u>Im underline</u>
+	<p>yet another P</p> -->
+
+
+		 	<p>Im the first child of 1st div</p>
+		 	<p>Im the second child of 1st div</p>
+		 	<div><p>1.1</p></div>
+
+		</div>
+
+<!-- 		<p class="red">I am the next sibling just after 1st div</p> -->
+		<p>I am the next sibling just after 1st div</p>
+		<p>I am the second sibling just after 1st div</p>
+		<div>
+		 	<p>I am the first child of the 2nd div</p>
+		</div>
+<!-- 		<p class="red">Iam the next sibling after the 2nd div</p> -->
+		<p>Iam the next sibling after the 2nd div</p>
+		<p>I am the second sibling just after 2nd div</p>
+		<p>I am the thirsd sibling just after 2nd div</p>
+
+		
+
+</span>
+</div>
+
+<p>im outside div</p>
+<h2>im h2 outside div</h2>
+</body>
+</html>
