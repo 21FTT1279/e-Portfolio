@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">  
+
+     .sibling-element {
+        padding: 10px;
+        background-color: #f2f2f2;
+    }
+     .parent-element {
+       /* position: static; stay the same*/
+       /*position: relative; not move element from the doc.x flow*/
+       /*position: absolute; push down the element*/
+       left: 100px;
+       bottom: 0px;
+       /*top: 10px;
+        height: 200px;
+        padding:   10px;
+        background-color: #81adc8;*/
+
+    }
+    .main-element {
+        /* position: static; stay the same*/
+       /*position: relative; not move element from the doc.x flow*/
+       /*position: absolute; push down the element*/
+       /*position: fixed;*/
+       left: 100px;
+       bottom: 0px;
+        background-color: yellow;
+        padding: 10px;
+    }
+
+    </style>
+</head>
+<body>
+ <div class="parent-element">
+            <div class="sibling-element">
+                I'm the other sibling element.
+            </div>
+            
+            <div class="main-element">
+                All eyes on me. I am the main element.
+            </div>
+            
+            <div class="sibling-element">
+                I'm the other sibling element.
+            </div>
+</div>
+</body>
+</html>

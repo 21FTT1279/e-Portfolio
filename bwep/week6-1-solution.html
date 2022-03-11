@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+		<style type="text/css">
+			img{width: 300px;height: 250px;}
+			.fs{font-size: 2em}
+			.dc{color: darkcyan;}
+			.cn{font-family: "courier new"}
+			.samewidth{width: 200px;}
+			/*li.italic{font-style:italic }*/
+			input{display: block;}
+			.turq{border: 3px solid turquoise;}
+			.border{border: 1px solid;}
+			.navy{border-color: navy}
+img[src^="assets/images/my/"]{border: 3px solid turquoise;}
+h3, input[type="text"]{font-family: courier new;}
+		/*input[class]{width: 200px;}
+		input{display: block;}
+		input{class~="border"}{border-color: turquoise;}
+		/* is that contain( only one attribute in class) */
+		p[id="fs"], li{color: darkcyan;}	
+		li:nth-child(2n+1){font-style: italic;}
+
+		div{width: 150px;height: 100px; padding:10px}
+		#1{padding: 25px;}
+		#d2{margin: 25px;}
+
+		</style>
+	
+</head>
+<body>
+<p class="fs dc">Here is my favorite pictures</p>
+<img src="assets/images/th/t-1.jpg" alt="">
+<img src="assets/images/my/m-1.jpg" class="turq" alt=""> 
+<img src="assets/images/my/m-2.jpg" class="turq" alt="">
+<img src="assets/images/th/t-2.jpg" alt="">
+<p>Just a form</p>
+<form action="">
+	<input type="text" class="cn samewidth border navy" placeholder="name" name="fullname">
+	<input type="text" class="cn samewidth border navy" placeholder="fone" name="fone">
+	<input type="email" class="samewidth border navy" placeholder="email" name="email">
+	<input type="number" class="samewidth border navy" name="captcha" placeholder="5x2">
+	<input type="submit">
+</form>
+<h3 class="cn border">here is list of my songs</h3>
+<ol class="dc">
+	<li>Dimana janji mu dulu</li>
+	<li class="italic">Insan ku sayang menghilang</li>
+	<li>Resah kerinduan</li>
+	<li class="italic">Mengusung rindu</li>
+	<li>Malam semakin dingin</li>
+	<li class="italic">Haruskah kita berpisah</li>
+	<li>Salah apa aku</li>
+	<li class="italic">Salam terakhir</li>
+
+<p>can you tell the difference?</p>
+	<div id="d1">Im a border-box</div>
+	<div id="d2">Im a content-box</div>
+	<div id="d3">Another div</div>
+
+</ol>
+</body>
+</html>

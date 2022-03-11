@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+		<style type="text/css">
+		/*using id, element, class, multiple selector ONLY*/
+		#darkcyan1{colour:  darkcyan; size: 2em;}
+		.borderturquoise{border: 3px solid;
+			              border-color: turquoise;}
+		.font-colour{colour: darkcyan;}
+		.font1{font-family: courier new;
+				border: 1px solid;}
+		.width1{width: 200px;
+				border-color: navy;}
+		 img {width: 300px;
+				height: 200px;}
+		/*.italic{font-style: italic;}*/
+		/*img[src^="assets/images/my/"]{border: 3px solid turquoise;*/
+			/*^ is starts*/
+		/*h3, input[type="text"]{font-family: courier new;}
+		input[class]{width: 200px;}
+		input{display: block;}
+		input{class~="border"}{border-color: turquoise;}
+		/* is that contain( only one attribute in class) */
+		/*p[id="fs"], li{color: darkcyan;}
+		li:nth-child(even{font-style: italic;}*/
+
+		div{width: 150px;height: 100px; padding:20px}
+		/*#d1{padding: 25px;}*/
+		#d1{box-sizing: border-box;}
+		#d2{margin: 25px;}
+		/*#d2{visibility: hidden;}*/
+		/*#d2{visibility: none;}*/
+		div, border{
+			     border: 1px solid;
+		}
+		</style>
+	
+</head>
+<body>
+<p id="darkcyan1">Here is my favorite pictures</p> <!-- 2em darkcyan -->
+
+<!-- all images 300x200 -->
+<img src="assets/images/th/t-1.jpg" alt="">
+<img class="borderturquoise" src="assets/images/my/m-1.jpg" alt=""> <!-- 3px solid turquoise -->
+<img class="borderturquoise" src="assets/images/my/m-2.jpg" alt=""> <!-- 3px solid turquoise -->
+<img src="assets/images/th/t-2.jpg" alt="">
+<p>Just a form</p>
+<form action="">
+	<input type="text"  placeholder="name" name="fullname" class="font1" class="width1"> <!-- courier new, width 200px, border 1px solid, border color navy -->
+	<input type="text"  placeholder="fone" name="fone" class="font1" class="width1"><!-- courier new, width 200px, border 1px solid, border color navy -->
+	<input type="email"  placeholder="email" name="email" class="width1"> <!-- width 200px border 1px solid, border color navy -->
+	<input type="number" name="captcha" placeholder="5x2" class="width1">  <!-- width 200px border 1px solid, border color navy -->
+	<input type="submit">
+</form>
+<h3 class="font1">here is list of my songs</h3> <!-- courier new border 1px solid -->
+<ol> 
+<!-- 	all list will be darkcyan -->
+	<li>Dimana janji mu dulu</li>
+	<li class="italic">Insan ku sayang menghilang</li> <!-- italic -->
+	<li >Resah kerinduan</li>
+	<li class="italic">Mengusung rindu</li> <!-- italic -->
+	<li>Malam semakin dingin</li>
+	<li class="italic">Haruskah kita berpisah</li><!-- italic -->
+	<li>Salah apa aku</li>
+	<li class="italic">Salam terakhir</li><!-- italic -->
+</ol>
+
+	<p>can you tell the difference?</p>
+	<div id="d1">Im a border-box</div>
+	<div id="d2">Im a content-box</div>
+	<div id="d3">Another div</div>
+	
+</body>
+</html>
