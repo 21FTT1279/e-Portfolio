@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week7-e-p1</title>
+</head>
+<style type="text/css">
+	h3,.class2{text-align: center;}
+	
+	#border {
+			margin: 0px auto;
+			width: 600px;
+			border-collapse: collapse;
+			}
+			
+	#border>form>div{border: 1px solid;}
+	.class1{width: 380px;
+			padding: 5px;			 
+			display: inline-block;}
+			
+	.class2{padding: 5px;}
+	
+
+</style>
+<body>
+	<div id="border">
+<h3>Registration for Covid-19 Volunteer &reg; C19-Team</h3>
+<form method="" action="">
+	<div>
+		<div class="class1"><label for="Fullname">Fullname</label></div>
+			<input type="text" name="Fullname" id="Fullname" maxlength="30">
+	</div>
+
+	<div>
+		<div class="class1"><label for="Email">Email</label></div>
+			<input type="Email" name="Email" id="Email">
+	</div>
+
+	<div>
+		<div class="class1"><label for="Date">Date you can start</label></div>
+			<input type=Date name="Date" id="Date">
+	</div>
+
+	<div>
+		 <div class="class1"><label for="Morning shift preference">Morning shift preference</label></div>
+			<input type="time" name="Morning shift preference" id="Morning shift preference">
+	</div>
+	<div>
+		<div class="class1"><label for="Evening shift preference">Evening shift preference</label></div>
+			<input type="time" name="Evening shift preference" id="Evening shift preference">
+	</div>
+
+	<div>
+		 <div class="class1"><label for="How many hours you can work? In multiple of 3">How many hours you can work? In multiple of 3</label></div>
+			<input type="number" name="hours" id="hours" min="3" max="9">
+	</div>
+
+	<div>
+		<div class="class1"><label for="Distance">Distance you willing to commute to volunteer center?</label></div>
+		1<input type="range" name="Distance" id="Distance" min="1" max="15" default="3">15
+	</div>
+	<div>
+		<div class="class1"><label for="currency">You currency perference for payment?</label></div>
+		<input type="radio" name="pound" id="pound"><label for="pound">&pound;</label>
+		<input type="radio" name="yen" id="yen"><label for="yen">&yen;</label>
+		<input type="radio" name="euro" id="euro"><label for="euro">&euro;</label>
+	</div>
+	<div>
+		 <div class="class2">
+			<textarea id="address" name="address" rows="6" cols="40" placeholder="Type your home address"></textarea></div>
+	</div>
+	<div>
+		 <div class="class2"><del>You will be given daily meals</del></div> 
+	</div>
+	<div>
+		 <div class="class2"><input type="checkbox" name="checkbox" id="checkbox">I agree to all terms and conditions</div>
+	</div>
+	<div>
+		 <div class="class2">Prove you are not robot 10 &lt; 20?
+		<input type="checkbox" name="checkbox" id="checkbox"></div>
+	</div>
+	<div>
+		 <div class="class2"><input type="submit" value="Volunteer now!" name=""></div>
+	</div>
+	<div>
+		<div class="class2"><input type="reset" value="Start Over" name=""></div>
+	</div>
+	
+		 <div class="class2">For more informaton, visit MOH 
+		<a href="" target="_blank">website</a></div>
+
+	</div>
+</form>
+</div>
+
+</body>
+</html>
