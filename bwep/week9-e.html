@@ -1,0 +1,209 @@
+<html !DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <style type="text/css">
+
+/*
+    THIS TASK REQUIRE YOU TO USE CSS GRID AND THEIR RELATED PROPERTIES
+  */
+
+    /*ORGANIZE YOUR CSS IN THE FOLLOWING ORDER, IF APPLICABLE
+
+    1. ELEMENT SELECTOR
+    2. ID SELECTOR
+    3. CLASS SELECTOR
+    4. DESCENDENT SELECTOR
+    5. CHILD SELECTOR
+    6. SIBLING SELECTOR
+    7. ATTRIBUTE SELECTOR
+    8. PSEUDO CLASS SELECTOR
+
+    FAILURE TO COMPLY WILL RESULTS IN MARK DEDUCTION*/
+
+    /*Desktop*/
+    @media screen and (min-width: 800px){
+      .main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 150px;
+        gap: 2em;
+       
+      }
+      
+    .submain{
+     display: grid;
+     justify-items: stretch;
+     
+    }
+
+    div>div:nth-child(1){
+      background: lightseagreen;
+      font-size: 1em;
+      justify-items: stretch;
+      
+    } 
+
+    div>div:nth-child(2){
+      background: skyblue;
+      display: grid;
+      grid-template-rows: auto;
+      font-size: 1em;
+      text-align: center;
+      
+    }  
+
+    div:nth-child(1),
+    div:nth-child(6),
+    div:nth-child(7),
+    div:nth-child(8){
+      grid-column: span 2 / span 5;
+      
+    }
+    div:nth-child(2){
+      grid-row: 1 / 2;
+    }
+
+    div:nth-child(3){
+      grid-row: 2 / 3;
+    } 
+
+    div:nth-child(4){
+      grid-row: 3 / 4;
+    } 
+
+    div:nth-child(5){
+      grid-row: 4 / 5;
+    }        
+  }
+
+
+    /*Tablet*/
+    @media screen and (min-width: 481px) and (max-width: 799px) {
+      .main{display: grid;
+            grid-column: 1fr 1fr;
+            font-size: 1.25em;
+            gap: 2em;
+            
+            }
+      div>div:nth-child(1),
+      div>div:nth-child(2){grid-column: 2em;}
+                             
+        div>div:nth-child(1),
+        div>div:nth-child(2),
+        div>div:nth-child(7),
+        div>div:nth-child(8){
+          grid-column-start: 1;
+          grid-column-end: span 2;
+        }                       
+      
+        div>div:nth-child(3),
+        div>div:nth-child(5){
+         align-items: stretch;
+        }
+      .col{
+        grid-auto-columns: span 1fr;
+        justify-items: stretch;
+                }
+
+      /*( author and quote(NO TOUCH)*/ 
+    div>div:nth-child(1){
+      background: lightseagreen;
+     justify-content: stretch;
+     grid-row: 2em;
+    } 
+    div>div:nth-child(2){
+      background: skyblue;
+      justify-content: stretch;
+      grid-row: auto;
+      background-size: 20px;
+      padding-bottom:  30px;
+
+    }          
+          }
+
+    /*MOBILE*/
+    @media screen and (max-width: 480px){
+      .main{display: grid;
+            text-align: justify;
+            grid-auto-columns: 100%;
+            align-content: stretch;
+            justify-items: stretch;
+            font-size: 1.5em;
+            }
+
+      /*author and quote*/ 
+    div>div:nth-child(1){
+      background: lightseagreen;
+     justify-content: stretch;
+     grid-row: 2em;
+    } 
+    div>div:nth-child(2){
+      background: skyblue;
+      justify-content: stretch;
+      grid-row: auto;
+      background-size: 30px;
+    }      
+        }
+        
+    
+
+  </style>
+</head>
+<body>
+  <!-- INSTRUCTIONS
+    YOU ARE NOT ALLOWED TO CHANGE ANY PART OF THE HTLM CODES (SUCH AS ADDING ID attributes or additional values to the classes atributes.) 
+  
+    YOUR TASK IS TO WRITE THE CSS CODE TO ACHIEVE THE REQUIRED OUTPUT-->
+<div class="main">
+  
+<div class="submain spotlight">
+  <div>Mark Twain</div>
+  <div>The man who does not read books has no advantage over the one who cannot read them.</div>
+</div>
+<div class="submain col">
+  <div>Mason Cooley</div>
+  <div>Procrastination makes easy things hard and hard things harder.</div>
+</div>
+<div class="submain col">
+  <div>Albert Einstein</div>
+  <div>
+A person who never made a mistake never tried anything new.</div>
+</div>
+<div class="submain col">
+  <div>Elon Musk</div>
+  <div>
+I think it’s possible to ordinary people to choose to be extraordinary.</div>
+</div>
+
+<div class="submain col">
+  <div>Jim Ryun</div>
+  <div>
+Motivation is what gets you started. Habit is what keeps you going.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Dr. Seuss</div>
+  <div>
+The more that you read, the more things you will know, the more that you learn, the more places you’ll go.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Chinese Proverb</div>
+  <div>
+He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.</div>
+</div>
+
+<div class="submain spotlight">
+  <div>Martin Luther king</div>
+  <div>
+If you can’t fly, then run. If you can’t run, then walk. If you can’t walk, then crawl. But by all means, keep moving</div>
+</div>
+
+
+</div>
+</body>
+</html>
