@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 11-exercise</title>
+	<script type="text/javascript">
+
+		var time = prompt("Enter time in 24hr: ")
+		var wx= prompt("Enter weather ")
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	if(time >=0 && time <=6){console.log("Too early to go out");}
+		else if(time>6 && time<17){
+			if(wx=="sunny"){console.log("Let play outside");}
+				
+				if(wx=="raining"){console.log("Let play indoor");}
+					
+		}
+
+	else if(time>16 && time<22){
+			if(wx=="sunny"){console.log("Let go cinema");}
+				
+				if(wx=="raining"){console.log("Watch movie at home");}
+					
+		}
+	// else if((time>6 && time<17) && wx=="sunny"){console.Log("Let play outside")}
+	// else if((time>6 && time<17) && wx=="raining"){console.Log("Let play indoor")}
+	// else if((time>16 && time<22) && wx=="sunny"){console.Log("Let go cinema")}
+	// else if((time>16 && time<22) && wx=="raining"){console.Log("Watch movie at home")}
+	else if(time>21 && time<25){console.log("It is bed time");}//no need 
+	else{console.log("invalid and good bye");}
+</script>
+</body>
+</html>
