@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>variable scopes</title>
+</head>
+<body>
+
+	<button onclick="fireup1()">ONE</button>
+	<button onclick="fireup2()">TWO</button>
+	<button onclick="fireup3()">THREE</button>
+
+	<script type="text/javascript">
+		var discount= 10;
+		function fireup1(){
+			discount*=10;
+			alert("discount "+discount);
+			alert("sales + discount"+ (sales+discount))
+		}
+
+		function fireup2(){
+			sales=1000;
+			alert("sales + discount "+ (sales+discount))
+			{
+				let z=20;
+				alert("z inside {} "+z)
+				var k =20;
+				alert("k inside {} "+k)
+			}
+
+			alert("k outside {} "+k)
+			alert("z outside {} "+z)
+		}	//let occur inside the block	
+
+		function fireup3(){
+			var name="ahmad";
+			alert("name "+name);
+			alert("sales "+sales);//declare fireup2 then this would show output
+		}
+	</script>
+</body>
+</html>

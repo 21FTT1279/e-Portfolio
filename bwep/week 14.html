@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>week 14</title>
+</head>
+<!-- <body id="page"> -->
+<body>
+	<!-- <input type="text" id="color"  onkeyup="background()"> -->
+	<input type="text" onkeyup="background2(this.value)">  <!-- red -->
+
+	<button onclick="background()">Change color</button>
+
+
+	<script>
+		function background(){
+			var page = document.getElementById("page");
+			var color = document.getElementById("color");
+
+			page.style.backgroundColor=color.value;
+					}
+
+		function background1(){
+			var color = document.getElementById("color");
+
+			document.body.style.backgroundColor=color.value;
+		}	
+
+		function background2(color){//color="red"
+			//parentheses:color = will contain red when inputted
+
+			document.body.style.backgroundColor=color;
+		}	
+
+
+	</script>
+</body>
+</html>
