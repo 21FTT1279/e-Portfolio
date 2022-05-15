@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>week10-e-b-s</title>
+    <style>
+    #myform{display: grid; width: 70%;margin: 0 auto;grid-template-columns:1fr 1fr 1fr;grid-auto-rows: 3em;}
+    input[type="number"]{height: 1.5em;width: 4em}
+
+
+        /*no additional css is required*/
+
+  </style>
+</head>
+<!-- do not insert additional id attributes to any element -->
+<!-- do not remove any inline styles -->
+<body onload="displayNone()">
+<form action="">
+<div id="myform">
+<h3 style="grid-column: 1/span 3;">Enrichment Points Calculator</h3>
+
+
+<span>Level</span>
+<div>
+  <select name="level" id="level" onchange="showLevel(this.value)">
+  <option value="0">select</option>
+  <option value="international">international</option>
+  <option value="national">national</option>
+</select>
+</div>
+<span><button class="hideall" id="reload">Reset form</button></span>
+
+<span></span><span></span>
+<span class="hideall"># of participation</span>
+
+
+<span class="hide1 hideall">Achievement for International</span>
+<div class="hide1  hideall">
+<select name="international" id="international" onchange="existingAchievement()">
+  <option value="0">select</option>
+  <option value="won trophy">won trophy</option>
+    <option value="participation">participation</option>
+</select>
+</div>
+<input type="number" id="internationalfrequency" min="0" max="5" class="hide1  hideall" value="0">
+
+<span class="hide2  hideall">National Level - Choose type</span>
+<div style="grid-column: 2/4" class="hide2  hideall">
+<select name="types" id="types" onchange="Nlevel(this.value)">
+  <option value="0">select</option>
+  <option value="club activities">club activities</option>
+    <option value="local events">local event</option>
+      <option value="both">both</option>
+</select>
+</div>
+
+
+<span class="hide21  hideall">club activities your role</span>
+<div class="hide21  hideall">
+<select name="clubactivities" id="clubactivities">
+  <option value="0">select</option>
+  <option value="president">president</option>
+    <option value="secretary">secretary</option>
+      <option value="member">member</option>
+</select>
+</div>
+<input type="number" id="cafrequency" min="0" max="10" value="0" class="hide21  hideall">
+
+
+<span class="hide22  hideall">Local event role</span>
+<div class="hide22  hideall">
+<select name="localevents" id="localevents">
+  <option value="0">select</option>
+  <option value="organizer">organizer</option>
+    <option value="participant">participant</option>
+</select>
+</div>
+<input type="number" id="lefrequency" min="0" max="10" value="0" class="hide22  hideall">
+
+<span class="hideall">You are in semester</span>
+<div style="grid-column:2/span 2" class="hideall">
+  <select name="semester" id="semester" onchange="EPReceive()">
+  <option value="0">select</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
+</div>
+<div id="epstatus" style="grid-column:1/span 3">
+
+</div>
+</form>
+<script>
+ //write all the required functions here
+ //indentation is important
+ //also neatness
+
+// repitition is not in the syllabus. but students may use loop since  they learnt this concept in ITP
+//  you are expected to use since covered in the classes:
+// function with parameters
+// getElementsByName
+// getElementsById
+
+// additionally
+// getElementsByClassName
+  
+  //variable
+  var hide1 = document.getElementsByClassName("hide1");
+  var hide2 = document.getElementsByClassName("hide2");
+  var hide21 = document.getElementsByClassName("hide21");
+  var hide22 = document.getElementsByClassName("hide22");
+  var hideAll = document.getElementsByClassName("hideall");
+  var international = document.getElementById("international");
+  var clubActivities = document.getElementById("clubactivities");
+  var localEvents = document.getElementById("localevents");
+  var internationalFrequency = document.getElementById("internationalfrequency");
+  var caFrequency = document.getElementById("cafrequency");
+  var leFrequency = document.getElementById("lefrequency");
+  var semester = document.getElementById("semester");
+  var types = document.getElementById("types");
+  var epStatus = document.getElementById("epstatus");
+ 
+
+
+  //The function for hide all content
+  function displayNone() {
+    for (var i = 0; i < hideAll.length; i++) {
+      hideAll[i].style.display = "none";
+    }
+  }
+
+  
+  //The function for show all content
+  function showLevel(level) {
+    displayNone();
+
+
+  //displaying the semesters
+  hideAll[13].style.display = "block";
+  hideAll[14].style.display = "block";
+
+  if (level=="international") {
+    for (var i = 0; i < hide1.length; i++) {
+      hide1[i].style.display = "block";
+      hideAll[i].style.display = "block";
+    }
+  }
+  else if (level=="national") {
+    for (var i = 0; i < hide2.length; i++) {
+      hide2[i].style.display = "block";
+      hideAll[i].style.display = "block";
+      }
+  }
+  else {
+    displayNone();
+  }
+  internationalFrequency.value = 0;
+  international.value = "0";
+  caFrequency.value = 0;
+  leFrequency.value = 0;
+  semester.value = 0;
+  types.value = "0";
+  epStatus.innerHTML = "";
+  }
+
+
+  //The function for text and ep poinnt alloc.
+  function EPReceive() {
+ var IP = 0;
+  var CP = 0;
+  var LP = 0;
+  var totalEP = 0;
+  var comment;
+
+
+    //ep points receive
+    if (international.value=="won trophy") {
+      IP = 45;
+    }
+    else if (international.value=="participation") {
+      IP = 25;
+    }
+    else {
+      IP = 0;
+    }
+
+     //The club roles option
+    if (clubActivities.value=="president") {
+      CP = 15;
+    }
+    else if (clubActivities.value=="secretary") {
+      CP = 10;
+    }
+    else if (clubActivities.value=="member") {
+      CP = 5;
+    }
+    else {
+      CP = 0;
+    }
+
+   //The event role options
+     if (localEvents.value=="organizer") {
+      LP = 8;
+    }
+    else if (localEvents.value=="participant") {
+      LP = 3;
+    }
+    else {
+      LP = 0;
+    }
+
+     //Calculations for ep
+    totalEP = (IP*internationalFrequency.value) + (CP*caFrequency.value) + (LP*leFrequency.value);
+
+    //comments
+    if (semester.value <= 3) {
+      if (totalEP <= 32) {
+        comment = "You need to participate more!";
+      }
+      else if (totalEP > 32) {
+        comment = "Good job!";
+      }
+    }
+    else if (semester.value <= 5) {
+      if (totalEP <= 32) {
+        comment = "You need to be more active than before!";
+      }
+      else if (totalEP > 32) {
+        comment = "Well done!";
+      }
+    }
+    else if (semester.value == 6) {
+      if (totalEP <= 32) {
+        comment = "please contact CSDI asap";
+      }
+      else if (totalEP > 32) {
+        comment = "Reminder: You need 64 points to graduate";
+      }
+    }
+  //display total ep and comments
+    epStatus.innerHTML = "EP: " + totalEP + "<br>" + comment;
+  }
+
+
+  //function show national level
+  function Nlevel() {
+    if (types.value == "club activities") {
+      for (var i = 0; i < hide22.length; i++) {
+        hide22[i].style.display = "none";
+      }
+      for (var i = 0; i < hide21.length; i++) {
+        hide21[i].style.display = "block";
+      }
+    }
+    else if (types.value == "local events") {
+      for (var i = 0; i < hide21.length; i++) {
+        hide21[i].style.display = "none";
+      }
+       for (var i = 0; i < hide22.length; i++) {
+        hide22[i].style.display = "block";
+      }
+    }
+    else if (types.value == "both") {
+      for (var i = 0; i < hide21.length; i++) {
+        hide21[i].style.display = "block";
+      }
+       for (var i = 0; i < hide22.length; i++) {
+        hide22[i].style.display = "block";
+      }
+    }
+    else {
+       for (var i = 0; i < hide21.length; i++) {
+        hide21[i].style.display = "none";
+      }
+       for (var i = 0; i < hide22.length; i++) {
+        hide22[i].style.display = "none";
+      }
+    }
+      leFrequency.value = 0;
+      caFrequency.value = 0;
+      semester.value = 0;
+      clubActivities.value = "0";
+      localEvents.value = "0";
+      epStatus.innerHTML = "";
+  }
+
+
+
+
+  //The function used for changing exiting achievement
+  function existingAchievement() {
+      internationalFrequency.value = 0;
+      semester.value = 0;
+      epStatus.innerHTML = "";
+  }
+</script>
+</body>
+</html>
