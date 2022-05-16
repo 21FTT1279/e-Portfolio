@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="../JavaScript/bootstrap.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>Events page</title>
+	<style type="text/css">
+
+	
+					/*<----sidemenu---->*/
+
+*{
+	margin: o;
+	padding: 0;
+	text-decoration: none; /*can use this kalau mau remove underline nya*/
+}
+
+@media (max-width: 479px){
+
+.sidemenu {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	left: -400px;
+	width: 50%;
+	height: 100%;
+	background-color: #033E3E;
+;
+	transition: all .4s; /*how long the sidemenu will move upon clicking. 0seconds for faster, and the higher the number the slower
+*/
+}
+
+.sidemenu header{
+	color: white;
+	font-size: 30px;
+	padding-left: 65px;
+	padding-top: 20px;
+}
+}
+
+@media (min-width: 480px) and (max-width: 799px){
+
+.sidemenu {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	left: -400px;
+	width: 300px;
+	height: 100%;
+	background-color: #033E3E;
+	transition: all .4s; /*how long the sidemenu will move upon clicking. 0seconds for faster, and the higher the number the slower
+*/
+}
+
+.sidemenu header{
+	color: white;
+	font-size: 30px;
+	padding-left: 100px;
+	padding-top: 20px;
+}
+
+}
+
+@media (min-width: 800px){
+
+.sidemenu {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	left: -400px;
+	width: 400px;
+	height: 100%vh;
+	background-color: #033E3E;
+	transition: all .4s; /*how long the sidemenu will move upon clicking. 0seconds for faster, and the higher the number the slower
+*/
+}
+
+.sidemenu header{
+	color: white;
+	font-size: 30px;
+	padding-left: 150px;
+	padding-top: 20px;
+}
+
+}
+
+
+.sidemenu ul a{
+	display: block;
+	height: 100%
+	width: 100%;
+	line-height: 40px;
+	color: white;
+	padding-left: 50px;
+	box-sizing: border-box;
+	border-bottom: 2px solid white;
+	
+}
+
+#check {
+	display: none;
+}
+
+label #button, label #cancel {
+	position: fixed;
+	cursor: pointer; /*so the cursor tukar jadi yang ada jari nya atu yg pointer */
+}
+
+label #button {
+	color: white;
+	background-color: #033E3E;
+	border-radius: 2px;
+	top: 25px;
+	font-size: 30px;
+	left: 10px;
+	transition: .4s;
+	padding: 5px 10px;
+}
+
+label #cancel {
+	position: fixed;
+	color: white;
+	top: 25px;
+	left: -250px;
+	font-size: 30px;
+	z-index: 1111; /*because we want to make 'x' on top of the menu*/
+	padding: 5px 10px;
+	transition: .4s;
+}
+
+#check:checked ~ .sidemenu{
+	left: 0;
+}
+
+#check:checked ~ label #cancel{
+	left: 10px;
+}
+
+
+
+	/*<-----filters menu----->*/
+
+@media (max-width: 479px){
+
+.sidefilter {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	right: 0px;
+	width: 60%;
+	height: 100%;
+	background-color: #033E3E;
+	transition: all .4s;
+}
+
+#kb>h3{
+	margin-top: 5px;
+}
+}
+
+@media (min-width: 480px) and (max-width: 799px){
+
+.sidefilter {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	right: 0px;
+	width: 50%;
+	height: 100%;
+	background-color: #033E3E;
+	transition: all .4s;
+}	
+}
+
+@media (min-width: 800px){
+
+.sidefilter {
+	position: fixed;
+	bottom: 0px;
+	top: 10px;
+	right: 0px;
+	width: 400px;
+	height: 100%;
+	background-color: #033E3E;
+	transition: all .4s;
+}
+}
+
+.sidefilter ul{
+	text-align: center;
+
+}
+
+.sidefilter ul a{
+	text-align: center;
+	display: block;
+	height: 100%
+	width: 100%;
+	line-height: 40px;
+	color: white;
+	padding-left: 0px;
+	box-sizing: border-box;
+	border-bottom: 2px solid white;
+}
+
+label #cancel1 {
+	position: fixed;
+	color: black;
+	top: 25px;
+	right: 15px;
+	font-size: 30px;
+	z-index: 1111; /*because we want to make 'hamburger line' on top of the filter menu*/
+	padding: 5px 10px;
+	transition: .4s;
+	cursor: pointer;
+}
+
+#check1 {
+	display: none;
+}
+
+#check1:checked ~ .sidefilter{
+	right: -400px;
+}
+
+#check1:checked ~ label #cancel1{
+	right: 10px;
+	cursor: pointer;
+}
+
+.header {
+	text-align: center;
+	color: white;
+}
+
+.cancel2 {
+	position: absolute;
+	font-family: sans-serif;
+	border-radius: 0.5em;
+	background-color: #800000;
+	color: black;
+	border-style: solid;
+	position: relative;
+	left: 43%;
+	bottom: 0px;
+	font-size: 1em;
+	padding: 0.3em;
+
+	cursor: pointer;
+}
+
+h2 {
+	position: relative;
+	color: white;
+	left: 30px;
+}
+
+ul {
+	color: white;
+}
+
+
+
+
+
+		/*<-----event----->*/
+
+  /*@media screen and (max-width: 479px)*/
+        body>h1{text-align: center;}
+        img{height: 100px;width: 200px;float: left; margin: 5px;}
+
+      
+
+	</style>
+</head>
+<body>
+
+
+
+
+
+
+	<!-- JQUERY FEATURE #1: Filter Menu
+	URL: https://github.com/javve/list.js
+	DATE: 16/4/2022 -->
+
+<!-- Filter Menu START-->
+<input type="checkbox" id="check1">
+<label for="check1">
+	
+	<i class="" id="cancel1"><b>&equiv;</b></i>
+</label>
+
+<div class="sidefilter" id="sidefilter">
+
+<h1 class="header">Filter</h1>
+
+<h2>Search here &nbsp;&nbsp;<input id="userInput" type="text" placeholder="Search places"></h2>
+
+
+
+<h2>Sort By</h2>
+
+<ul data-filter="all" class="active">
+	<a href="sort(new-old).html">New - old added</a>
+</ul>
+
+<ul data-filter="Blazer"><a href="sort(old-new).html">Old - new added</a>
+	
+</ul>
+
+
+<h2>Show by district</h2>
+
+
+<ul>
+	<input type="checkbox" id="tickall" checked onclick="tickall()">
+	All
+</ul>
+
+<ul>
+	<input type="checkbox" id="tickbrunei" onclick="tickbrunei()">
+	Brunei Muara
+</ul>
+
+<ul>
+	<input type="checkbox" id="ticktutong" onclick="ticktutong()">
+	Tutong
+</ul>
+
+<ul>
+	<input type="checkbox" id="ticktemburong" onclick="ticktemburong()">
+	Temburong
+</ul>
+
+<ul>
+	<input type="checkbox" id="tickkb" onclick="tickkb()">
+	Kuala Belait
+</ul>
+
+<a href="filter page + events.html"><button name="cancel" class="cancel2" onclick="resets()">Reset</button></a> 
+
+
+</div>
+<!-- Filter Menu END -->
+
+
+    <h1>Events</h1>
+
+    <div class="places-list" id="listplaces">
+    	<h1></h1>
+
+     <div id="tembird1"><img src="../ImagesAndVideo/ClimateChange.jpg"><h3>Climate Change Week</h3> 5/12 - 7/12/2022 Have a listen of latest update that happen around the world. </div></li> <br><br><br>
+
+    <div id="kb"><img src="../ImagesAndVideo/PaintballTournament.jpg"><h3>Paintball Tournament</h3> 20/12 - 23/12/2022	Brunei Second Tournament. Gather up your families and friends to experience thrilled of paintball.</div></li> <br><br><br>
+
+     <div id="tembird2"><img src="../ImagesAndVideo/IslamicWeek.jpg"><h3>Islamic Week</h3> 1/12 - 4/12/2022	With Malay Islam Monarchy as the governing philosophy of the country, Brunei Darussalam practices and incorporates the teaching of Islam within its administrative system, thus shaping its culture and way of life.</div></li> <br><br><br>
+
+    <div id="bruneimuara"><img src="../ImagesAndVideo/Brunei Gastronomy Week.jpg"><h3>Gastronomy Week</h3> 1/12- 5/12 Have a taste on what food innovation that is created by Brunei's promising chef through culture and tradition.</div></li> <br><br><br>
+
+    <div id="brunei1"><img src="../ImagesAndVideo/VirtualHistory.jpg"><h3>Virtual History</h3> 1/12 - 31/12/2022 Explore the fun of learning more of Brunei's history in the history centre.</div></li>  <br><br><br>
+
+    <div id="tutong1"><img src="../ImagesAndVideo/BrooksRun.jpg"><h3>Brooks Run Challenge</h3> 29/10 - 31/12/2022 Complete a series of medium to long distance challenge in their fourth virtual run series
+    </div></li> <br><br><br>
+
+    
+
+</div>
+
+
+		<!-- sidemeu -->
+<input type="checkbox" id="check">
+<label for="check">
+	<i class="fas fa-bars" id="button"></i>
+	<i class="fas fa-times" id="cancel"></i>
+</label>
+
+<div class="sidemenu">
+<header>MENU</header>
+	
+  <ul><a href="landing page.html">HOME</a></ul>
+  <ul><a href="filter page + events.html">EVENT</a></ul>
+  <ul><a href="Video and caption.html">GALLERY</a></ul>
+  <ul><a href="place of interest.html">PLACE OF INTEREST</a></ul>
+  <ul><a href="feedback.html">FEEDBACK</a></ul>
+
+</div>
+
+
+<script>
+		//For search filter
+$(document).ready(function(){
+  $("#userInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#listplaces div").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+	
+
+		//for show by district filter
+
+		//show all
+function tickall() {
+	var ticks = document.getElementById("tickall");
+	var text = document.getElementById("tutong1");
+	var text1 = document.getElementById("kb");
+	var text2 = document.getElementById("tembird1");
+	var text3 = document.getElementById("tembird2");
+	var text4 = document.getElementById("bruneimuara");
+	var text5 = document.getElementById("brunei1");
+
+	if (ticks.checked==true) {
+		text.style.display="block";
+		text1.style.display="block";
+		text2.style.display="block";
+		text3.style.display="block";
+		text4.style.display="block";
+		text5.style.display="block";
+	} else {
+		text.style.display="none";
+		text1.style.display="none";
+		text2.style.display="none";
+		text3.style.display="none";
+		text4.style.display="none";
+		text5.style.display="none";
+	}
+}
+
+		
+		//show brunei
+function tickbrunei() {
+	var ticks = document.getElementById("tickbrunei");
+	var text = document.getElementById("tutong1");
+	var text1 = document.getElementById("kb");
+	var text2 = document.getElementById("tembird1");
+	var text3 = document.getElementById("tembird2");
+	var text4 = document.getElementById("bruneimuara");
+	var text5 = document.getElementById("brunei1");
+
+	if (ticks.checked==true) {
+		text4.style.display="block";
+		text5.style.display="block";
+		text.style.display="none";
+		text1.style.display="none";
+		text2.style.display="none";
+		text3.style.display="none";
+
+		// text5.style.position="relative";
+		// text5.style.bottom= "250px";
+		// text4.style.position="fixed";
+		// text4.style.bottom= "200px";
+	} else {
+		text4.style.display="block";
+		
+		text4.style.bottom= "0px";
+		text5.style.display="block";
+		
+		text5.style.bottom= "0px";
+
+		text.style.display="block";
+		text1.style.display="block";
+		text2.style.display="block";
+		text3.style.display="block";
+	}
+}		
+
+
+		//show temburong
+function ticktemburong() {
+	var ticks = document.getElementById("ticktemburong");
+	var text = document.getElementById("tutong1");
+	var text1 = document.getElementById("kb");
+	var text2 = document.getElementById("tembird1");
+	var text3 = document.getElementById("tembird2");
+	var text4 = document.getElementById("bruneimuara");
+	var text5 = document.getElementById("brunei1");
+
+	if (ticks.checked==true) {
+		text.style.display="none";
+		text1.style.display="none";
+		text2.style.display="block";
+		text3.style.display="block";
+		text4.style.display="none";
+		text5.style.display= "none";
+	} else {
+		text.style.display="block";
+		text1.style.display="block";
+		text2.style.display="block";
+		text3.style.display="block";
+		text4.style.display="block";
+		text5.style.display="block";
+	}
+}	
+
+
+		//show tutong
+function ticktutong() {
+	var ticks = document.getElementById("ticktutong");
+	var text = document.getElementById("tutong1");
+	var text1 = document.getElementById("kb");
+	var text2 = document.getElementById("tembird1");
+	var text3 = document.getElementById("tembird2");
+	var text4 = document.getElementById("bruneimuara");
+	var text5 = document.getElementById("brunei1");
+
+	if (ticks.checked==true) {
+		text.style.display="block";
+		text1.style.display="none";
+		text2.style.display="none";
+		text3.style.display="none";
+		text4.style.display="none";
+		text5.style.display= "none";
+
+		// text.style.position="relative"; if i use this, the filter menu nya will not be on top 
+		// text.style.bottom= "300px";
+	} else {
+		text.style.display="block";
+		text1.style.display="block";
+		text2.style.display="block";
+		text3.style.display="block";
+		text4.style.display="block";
+		text5.style.display="block";
+	}
+}			
+
+
+		//show kb
+function tickkb() {
+	var ticks = document.getElementById("tickkb");
+	var text = document.getElementById("tutong1");
+	var text1 = document.getElementById("kb");
+	var text2 = document.getElementById("tembird1");
+	var text3 = document.getElementById("tembird2");
+	var text4 = document.getElementById("bruneimuara");
+	var text5 = document.getElementById("brunei1");
+
+	if (ticks.checked==true) {
+		text.style.display="none";
+		text2.style.display="none";
+		text3.style.display="none";
+		text4.style.display="none";
+		text5.style.display= "none";
+	} else {
+		text.style.display="block";
+		text1.style.display="block";
+		text2.style.display="block";
+		text3.style.display="block";
+		text4.style.display="block";
+		text5.style.display="block";
+	}
+}		
+
+</script>
+
+
+
+<!-- JQUERY FEATURE #5 : Live Search Through Table Rows Using jQuery And Regex
+URL : https://www.jqueryscript.net/table/Live-Search-Through-Table-Rows-Using-jQuery.html
+DATE : 11/5.2022 -->
+
+
+<!-- Table START -->
+ <div class="container">
+<input type="text" class="form-control" placeholder="Search..." id="search_field">
+  <div class="row">
+    <div class="col-md-6">
+
+    <table id="myTable" class="table table-inverse">
+      <thead>
+        <tr class="myHead">
+          <th>Events</th>
+          <th>Date (year: 2022)</th>
+          <th>Time</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Climate Change Week</td>
+        <td>5/12 - 7/12</td>
+        <td>3 - 6 pm</td>
+        <td>BRIDEX International Conference Centre</td>
+      </tr>
+      <tr>
+        <td>Paintball Tournament</td>
+        <td>20/12 - 23/12</td>
+        <td>8 - 12 am 
+        		<br>
+        		2 - 5 pm</td>
+         <td>Jerudong Sports Complex</td>
+      </tr>
+      <tr>
+        <td>Islamic Week</td>
+        <td>1/12 - 4/12</td>
+        <td>2 - 5 pm</td>
+         <td>BRIDEX International Conference Centre</td>
+      </tr>
+      <tr>
+        <td>Gastronomy Week</td>
+        <td>1/12- 5/12</td>
+        <td>2 - 5 pm</td>
+         <td>BRIDEX International Conference Centre</td>
+      </tr>
+      <tr>
+        <td>Virtual History</td>
+        <td>1/12- 31/12</td>
+        <td>2 - 5 pm</td>
+         <td>Virtual at Home</td>
+      </tr>
+      <tr>
+        <td>Brooks Run Challenge</td>
+        <td>29/10-31/12</td>
+        <td>1 - 5 pm</td>
+         <td>Virtual at Home</td>
+      </tr>
+
+    </table>
+</div>
+  </div>
+<div></div>
+    <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
+
+        <script src="../JavaScript/index.js"></script>
+
+<!-- Table END -->
+
+
+
+
+</body>
+
+</html>
