@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 11-exercise</title>
+	<script type="text/javascript">
+		var t;
+
+		var name=prompt("Enter name: ");
+		var t = prompt("Enter time in 24hr (whole number only): ");
+		var num1=prompt("Enter first number: ");
+		var num2= prompt("Enter second number: ");
+		var sign=prompt("Enter choice. 1 add, 2 multiply: ");
+	
+		sum1= (Number(num1)) + (Number(num2));
+		sum2= (Number(num1)) * (Number(num2));
+
+		
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	if(0<=t && 12>=t){
+		document.write("Good morning " + name +" .");
+		document.write("<br>"+"Your entered "+  num1 +"&"+ num2);
+			if(sign==1){
+				document.write("<br>"+"You decided to add them ");
+				document.write("<br>"+"The answer is "+sum1);
+			}
+			if(sign==2){
+				document.write("<br>"+"You decided to multiply them");
+				document.write("<br>"+"The answer is "+sum2);
+			}
+		document.write("<br>"+"Enjoy your morning")
+	}
+	else if(12<t && 24>=t){
+		document.write("<br>"+"Good day " + name);
+		document.write("<br>"+"Your entered "+  num1 +"&"+ num2);
+			if(sign=1){
+				document.write("<br>"+"You decided to add them");
+				document.write("<br>"+"The answer is"+sum2);
+			}
+			if(sign=2){
+				document.write("<br>"+"You decided to multiply them");
+				document.write("<br>"+"The answer is "+sum2);
+			}
+		document.write("<br>"+"Enjoy the rest of your days")
+	}
+	else{
+		document.write("Sorry" + name+". I need a valid time.");
+	}
+	
+</script>
+</body>
+</html>
